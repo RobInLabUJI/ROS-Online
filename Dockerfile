@@ -22,6 +22,7 @@ RUN adduser --disabled-password \
 
 COPY .jupyter ${HOME}/.jupyter
 COPY Online ${HOME}/Online
+COPY index.ipynb ${HOME}
 RUN chown -R ${NB_UID} ${HOME}
 
 USER ${NB_USER}
