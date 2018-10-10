@@ -27,4 +27,6 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-CMD ["jupyter", "lab", "--no-browser", "--ip", "0.0.0.0"]
+CMD ["cp", "~/.jupyter/lab/workspaces/lab-a511.jupyterlab-workspace", \
+	"~/.jupyter/lab/workspaces/*ros-online*.jupyterlab-workspace", "&&", \
+	"jupyter", "lab", "--no-browser", "--ip", "0.0.0.0"]
